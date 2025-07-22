@@ -20,7 +20,7 @@ function injectHeader() {
           <a href="Contact.html">Contact</a>
         </div>
     <div class="nav-item">
-          <a href="Brotchoure.html">Brotchoure</a>
+          <a href="brotchoure.html">Brotchoure</a>
         </div>
       </nav>
       <div class="menu-toggle" onclick="toggleSidebar()">
