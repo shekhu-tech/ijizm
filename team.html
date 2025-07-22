@@ -38,27 +38,18 @@
             color: var(--text-color);
         }
 
-        /* --- Hero Image Section --- */
-        .hero-section {
-            height: 60vh; /* Viewport height ka 60% */
+        /* --- UPDATED: HTML Image Banner Section --- */
+        .page-banner {
             width: 100%;
-            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('team.jpg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed; /* Parallax effect */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: var(--white-color);
+            line-height: 0; /* Prevents extra space below the image */
         }
 
-        .hero-content h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 3.5rem;
-            font-weight: 700;
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+        .page-banner img {
+            width: 100%;
+            height: auto; /* Height ko width ke hisab se adjust karega */
+            display: block;
         }
+
 
         /* --- Team Section --- */
         .team-section {
@@ -151,8 +142,6 @@
         }
         
         @media (max-width: 768px) {
-            .hero-section { height: 50vh; }
-            .hero-content h1 { font-size: 2.5rem; }
             .section-title h2 { font-size: 2.2rem; }
         }
     </style>
@@ -161,12 +150,10 @@
     <!-- Header will be injected here -->
     <div id="header-container"></div>
 
-    <!-- Hero Image Section -->
-    <header class="hero-section">
-        <div class="hero-content">
-            <h1>Meet Our Dedicated Team</h1>
-        </div>
-    </header>
+    <!-- HTML Image Banner -->
+    <div class="page-banner">
+        <img src="team.jpg" alt="Our Team at Ijizm.in">
+    </div>
 
     <!-- Team Content Section -->
     <main class="team-section">
