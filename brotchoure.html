@@ -11,8 +11,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css" />
-    
-    
 
     <style>
         :root {
@@ -37,42 +35,6 @@
             background-color: var(--light-color);
         }
         
-        /* --- Header --- */
-        .main-header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background-color: var(--white-color);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-            z-index: 1000;
-            padding: 15px 0;
-        }
-        .main-header .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--primary-color);
-            text-decoration: none;
-        }
-        .main-nav a {
-            color: var(--heading-color);
-            text-decoration: none;
-            margin-left: 25px;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-        .main-nav a:hover, .main-nav a.active {
-            color: var(--primary-color);
-        }
-
         /* --- Download Section --- */
         .download-section {
             display: flex;
@@ -136,23 +98,18 @@
             background-color: var(--secondary-color);
         }
         
-        @media (max-width: 768px) {
-            .main-nav { display: none; }
-        }
     </style>
 </head>
 <body>
-
-    <!-- Header -->
+    <!-- Header will be injected here by your script -->
     <div id="header-container"></div>
-
     <!-- Download Section -->
     <main class="download-section">
         <!-- 
             IMPORTANT: 'href' me apni PDF file ka path dalein.
             'download' attribute se file browser me khulne ke bajaye download hogi.
         -->
-        <a href="insha%20ji%20zhatka%20machin%20Quotation.pdf" class="download-card" download>
+        <a href="path/to/your/brochure.pdf" class="download-card" download>
             <div class="icon">
                 <i class="fas fa-file-pdf"></i>
             </div>
@@ -161,7 +118,9 @@
             <span class="download-button">Download Now</span>
         </a>
     </main>
- <!-- Footer will be injected here -->
+
+    <!-- Footer will be injected here by your script -->
+   <!-- Footer will be injected here -->
     <div id="footer-container"></div>
     <!-- JavaScript to inject header and footer -->
   <script src="script.js" defer></script>
