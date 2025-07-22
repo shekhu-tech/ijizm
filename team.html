@@ -9,19 +9,21 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-     <link rel="stylesheet" href="styles.css" />
-
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
+    <!-- Link to your main stylesheet -->
+    <link rel="stylesheet" href="styles.css" />
 
     <style>
         :root {
-            --primary-color: white;
-            --secondary-color: #007bff;
-            --text-color: #e0e0e0;
-            --heading-color: #ffffff;
-            --card-bg-color: rgba(255, 255, 255, 0.1);
-            --card-border-color: rgba(255, 255, 255, 0.2);
-            --shadow-color: rgba(0, 0, 0, 0.3);
+            --primary-color: #005A9C; /* Professional Blue */
+            --secondary-color: #D4A017; /* Gold Accent */
+            --bg-color: #f9fafb;
+            --text-color: #555;
+            --heading-color: #111;
+            --white-color: #ffffff;
+            --shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+            --shadow-hover: 0 8px 25px rgba(0, 0, 0, 0.1);
         }
 
         * {
@@ -30,191 +32,170 @@
             box-sizing: border-box;
         }
 
-        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+        }
 
-        @keyframes gradientAnimation {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+        /* --- Hero Image Section --- */
+        .hero-section {
+            height: 60vh; /* Viewport height ka 60% */
+            width: 100%;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('team.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Parallax effect */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--white-color);
+        }
+
+        .hero-content h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        /* --- Team Section --- */
+        .team-section {
+            padding: 80px 20px;
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
         }
 
-        .page-section {
-            padding: 120px 0 80px;
-        }
-
-        /* --- Header --- */
-        .main-header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background: rgba(22, 29, 47, 0.5);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            z-index: 1000;
-            padding: 15px 0;
-            border-bottom: 1px solid var(--card-border-color);
-        }
-        .main-header .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--primary-color);
-            text-decoration: none;
-        }
-        .main-nav a {
-            color: var(--heading-color);
-            text-decoration: none;
-            margin-left: 25px;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-        .main-nav a:hover, .main-nav a.active {
-            color: var(--primary-color);
-        }
-
-        /* --- Section Title --- */
         .section-title {
             text-align: center;
             margin-bottom: 60px;
         }
+
         .section-title h2 {
-            font-size: 3rem;
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
             color: var(--heading-color);
             margin-bottom: 15px;
-            text-shadow: 2px 2px 10px var(--shadow-color);
-        }
-        .section-title p {
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto;
-            color: var(--text-color);
-            opacity: 0.8;
         }
 
-        /* --- Team Grid --- */
+        .section-title p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
         .team-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2.5rem;
+            gap: 30px;
         }
 
-        /* --- Team Card (Glassmorphism + 3D Tilt) --- */
         .team-card {
-            background: var(--card-bg-color);
-            border: 1px solid var(--card-border-color);
-            border-radius: 15px;
-            padding: 40px 30px;
+            background-color: var(--white-color);
+            border-radius: 10px;
+            box-shadow: var(--shadow);
             text-align: center;
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            box-shadow: 0 8px 32px 0 var(--shadow-color);
-            transform-style: preserve-3d;
-            will-change: transform;
-            transition: transform 0.1s ease-out, box-shadow 0.3s ease-out;
-        }
-
-        .team-card-inner {
-            transform: translateZ(20px); /* Pushes content forward */
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top: 4px solid transparent;
         }
 
         .team-card:hover {
-            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+            border-top-color: var(--primary-color);
         }
 
-        .team-image-wrapper {
-            position: relative;
-            width: 150px;
-            height: 150px;
-            margin: 0 auto 25px;
-        }
-
-        .team-image-wrapper img {
+        .team-card-image {
             width: 100%;
-            height: 100%;
-            border-radius: 50%;
+            height: 250px;
             object-fit: cover;
-            border: 4px solid var(--primary-color);
+        }
+
+        .team-card-content {
+            padding: 25px;
         }
 
         .team-card h3 {
-            font-size: 1.6rem;
+            font-size: 1.5rem;
             color: var(--heading-color);
-            margin-bottom: 8px;
+            margin-bottom: 5px;
         }
 
         .team-card .title {
             color: var(--primary-color);
             font-weight: 500;
-            font-size: 1rem;
+            margin-bottom: 15px;
+        }
+
+        .team-card .bio {
+            font-size: 0.95rem;
+            line-height: 1.6;
             margin-bottom: 20px;
         }
 
         .team-socials a {
             color: var(--text-color);
-            font-size: 1.3rem;
-            margin: 0 12px;
-            transition: color 0.3s ease, transform 0.3s ease;
-            display: inline-block;
-        }
-        .team-socials a:hover {
-            color: var(--primary-color);
-            transform: scale(1.2);
+            font-size: 1.2rem;
+            margin: 0 10px;
+            transition: color 0.3s ease;
         }
 
+        .team-socials a:hover {
+            color: var(--primary-color);
+        }
+        
         @media (max-width: 768px) {
-            .main-nav { display: none; }
+            .hero-section { height: 50vh; }
+            .hero-content h1 { font-size: 2.5rem; }
             .section-title h2 { font-size: 2.2rem; }
-            .section-title p { font-size: 1rem; }
         }
     </style>
 </head>
 <body>
+    <!-- Header will be injected here -->
+    <div id="header-container"></div>
 
-     <!-- Header will be injected here -->
-  <div id="header-container"></div>
+    <!-- Hero Image Section -->
+    <header class="hero-section">
+        <div class="hero-content">
+            <h1>Meet Our Dedicated Team</h1>
+        </div>
+    </header>
 
-    <!-- Our Team Section -->
-    <section id="team" class="page-section">
+    <!-- Team Content Section -->
+    <main class="team-section">
         <div class="container">
             <div class="section-title">
-                <h2>Meet Our Experts</h2>
-                <p>The driving force behind our commitment to excellence. We are a collective of passionate, skilled professionals dedicated to securing your world.</p>
+                <h2>The Experts Behind Our Success</h2>
+                <p>We are a group of passionate, skilled, and experienced professionals united by a single mission: to deliver unparalleled security and peace of mind to our clients.</p>
             </div>
             <div class="team-grid">
                 <!-- Team Member 1 -->
                 <div class="team-card">
-                    <div class="team-card-inner">
-                        <div class="team-image-wrapper">
-                            <img src="https://placehold.co/400x400/00aeff/FFFFFF?text=CEO" alt="Team Member 1">
-                        </div>
+                    <img src="https://source.unsplash.com/400x400/?man,portrait,ceo" alt="Team Member 1" class="team-card-image">
+                    <div class="team-card-content">
                         <h3>Vikram Singh</h3>
-                        <p class="title">Founder & Chief Strategist</p>
+                        <p class="title">Founder & CEO</p>
+                        <p class="bio">With over 15 years of experience, Vikram leads our team with a vision for innovation and excellence.</p>
                         <div class="team-socials">
                             <a href="#"><i class="fab fa-twitter"></i></a>
                             <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="#"><i class="fab fa-facebook-f"></i></a>
                         </div>
                     </div>
                 </div>
                 <!-- Team Member 2 -->
                 <div class="team-card">
-                    <div class="team-card-inner">
-                        <div class="team-image-wrapper">
-                            <img src="https://placehold.co/400x400/28a745/FFFFFF?text=Tech" alt="Team Member 2">
-                        </div>
+                    <img src="https://source.unsplash.com/400x400/?woman,portrait,engineer" alt="Team Member 2" class="team-card-image">
+                    <div class="team-card-content">
                         <h3>Priya Sharma</h3>
-                        <p class="title">Head of Technical Operations</p>
+                        <p class="title">Lead Technician</p>
+                        <p class="bio">Priya is the technical mastermind behind our flawless installations and system maintenance.</p>
                         <div class="team-socials">
                             <a href="#"><i class="fab fa-twitter"></i></a>
                             <a href="#"><i class="fab fa-linkedin-in"></i></a>
@@ -223,12 +204,11 @@
                 </div>
                 <!-- Team Member 3 -->
                 <div class="team-card">
-                    <div class="team-card-inner">
-                        <div class="team-image-wrapper">
-                            <img src="https://placehold.co/400x400/ffc107/FFFFFF?text=Ops" alt="Team Member 3">
-                        </div>
+                    <img src="https://source.unsplash.com/400x400/?man,portrait,manager" alt="Team Member 3" class="team-card-image">
+                    <div class="team-card-content">
                         <h3>Anil Kumar</h3>
-                        <p class="title">Client Relations Manager</p>
+                        <p class="title">Operations Manager</p>
+                        <p class="bio">Anil ensures that every project runs smoothly from initial consultation to final handover.</p>
                         <div class="team-socials">
                             <a href="#"><i class="fab fa-twitter"></i></a>
                             <a href="#"><i class="fab fa-linkedin-in"></i></a>
@@ -237,37 +217,12 @@
                 </div>
             </div>
         </div>
-    </section>
+    </main>
 
-    <!-- JavaScript for 3D Tilt Effect -->
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const cards = document.querySelectorAll('.team-card');
-
-            cards.forEach(card => {
-                card.addEventListener('mousemove', (e) => {
-                    const rect = card.getBoundingClientRect();
-                    const x = e.clientX - rect.left;
-                    const y = e.clientY - rect.top;
-
-                    const centerX = rect.width / 2;
-                    const centerY = rect.height / 2;
-
-                    const rotateX = ((y - centerY) / centerY) * -6; // Max rotation
-                    const rotateY = ((x - centerX) / centerX) * 6;  // Max rotation
-
-                    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-                });
-
-                card.addEventListener('mouseleave', () => {
-                    card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0)';
-                });
-            });
-        });
-    </script>
- <!-- Footer will be injected here -->
+    <!-- Footer will be injected here -->
     <div id="footer-container"></div>
+    
     <!-- JavaScript to inject header and footer -->
-  <script src="script.js" defer></script>
+    <script src="script.js" defer></script>
 </body>
 </html>
