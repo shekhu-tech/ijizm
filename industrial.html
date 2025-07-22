@@ -1,1 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Industrial Fencing - Ijizm.in</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Link to your main stylesheet -->
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+        :root {
+            --primary-color: #ffc107;
+            --bg-color: #1a202c;
+            --card-bg: #2d3748;
+            --text-color: #a0aec0;
+            --heading-color: #f7fafc;
+            --border-color: rgba(255, 193, 7, 0.3);
+        }
+        body {
+            font-family: 'Roboto Condensed', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        .description-section {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        .description-section h1 {
+            font-size: 2.8rem;
+            color: var(--heading-color);
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .description-section p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+        .yt-card {
+            background-color: var(--card-bg);
+            border: 2px solid var(--border-color);
+            padding: 20px;
+            text-decoration: none;
+            color: var(--heading-color);
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            aspect-ratio: 1 / 1;
+            position: relative;
+            overflow: hidden;
+        }
+        .yt-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(120deg, transparent, rgba(255, 193, 7, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+        .yt-card:hover::before {
+            left: 100%;
+        }
+        .yt-card:hover {
+            background-color: #4a5568;
+            border-color: var(--primary-color);
+        }
+        .yt-card .icon {
+            font-size: 3.5rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        .yt-card h3 {
+            font-size: 1.2rem;
+            text-align: center;
+            text-transform: uppercase;
+            z-index: 1;
+        }
+        @media (max-width: 768px) {
+            .description-section h1 { font-size: 2.2rem; }
+            .card-grid { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header will be injected here -->
+    <div id="header-container"></div>
 
+    <div class="container">
+        <section class="description-section">
+            <h1>Industrial Perimeter Security</h1>
+            <p>Protect your valuable assets, inventory, and infrastructure with our robust industrial electric fencing systems. We provide high-security, custom solutions for factories, warehouses, and large-scale commercial properties.</p>
+        </section>
+        <main class="card-grid">
+            <script>
+                const youtubeLink = "https://youtube.com/@ijizm.in1?feature=shared";
+                const grid = document.querySelector('.card-grid');
+                for (let i = 1; i <= 40; i++) {
+                    const card = document.createElement('a');
+                    card.href = youtubeLink;
+                    card.target = "_blank";
+                    card.className = "yt-card";
+                    card.innerHTML = `
+                        <div class="icon"><i class="fas fa-industry"></i></div>
+                        <h3>Site Project ${i}</h3>
+                    `;
+                    grid.appendChild(card);
+                }
+            </script>
+        </main>
+    </div>
+
+    <!-- Footer will be injected here -->
+    <div id="footer-container"></div>
+
+    <!-- JavaScript to inject header and footer -->
+    <script src="script.js" defer></script>
+</body>
+</html>
