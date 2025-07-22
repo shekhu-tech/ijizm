@@ -22,6 +22,15 @@ function injectHeader() {
     <div class="nav-item">
           <a href="brotchoure.html">Brotchoure</a>
         </div>
+        <div class="nav-item">
+          <a href="residential.html">Residentail</a>
+        </div>
+        <div class="nav-item">
+          <a href="industrial.html">Industrial</a>
+        </div>
+        <div class="nav-item">
+          <a href="agriculture.html">Agriculture</a>
+        </div>
       </nav>
       <div class="menu-toggle" onclick="toggleSidebar()">
         <i class="fas fa-bars"></i>
@@ -58,6 +67,22 @@ function injectHeader() {
       <span><i class="fas fa-briefcase"></i>Brotchoure</span>
     </a>
   </li>
+  <li>
+  <a class="sidebar-button" href="residential.html">
+    <span><i class="fas fa-home"></i> Residential</span>
+  </a>
+</li>
+<li>
+  <a class="sidebar-button" href="industrial.html">
+    <span><i class="fas fa-industry"></i> Industrial</span>
+  </a>
+</li>
+<li>
+  <a class="sidebar-button" href="agriculture.html">
+    <span><i class="fas fa-tractor"></i> Agriculture</span>
+  </a>
+</li>
+  
 </ul>
       </div>
     </header>
@@ -79,10 +104,14 @@ function injectFooter() {
         <p class="footer-description">
           We Deal in multy range of electric Facing Services at right price in right cost, we understand your problem already, we deal in Residential, industrial, Commercial , and Agriculture sector. any thing you want to know about us is here please yourself and give us a chance. Thanks regards Mr. Shubham Insha</p>
         <div class="footer-buttons">
-          <a href="privacy.html" class="footer-btn">Privacy</a>
-          <a href="team.html" class="footer-btn">Our-Team</a>
-          <a href="contact.html" class="footer-btn">Contact</a>
-          <a href="brotchoure.html" class="footer-btn">Brotchoure</a>
+         <a href="privacy.html" class="footer-btn">Privacy</a>
+         <a href="team.html" class="footer-btn">Our-Team</a>
+         <a href="contact.html" class="footer-btn">Contact</a>
+         <a href="brotchoure.html" class="footer-btn">Brotchoure</a>
+         <a href="residential.html" class="footer-btn">Residential</a>
+         <a href="industrial.html" class="footer-btn">Industrial</a>
+         <a href="agriculture.html" class="footer-btn">Agriculture</a>
+
         </div>
         <div class="social-links">
           <a href="#"><i class="fab fa-facebook-f"></i></a>
