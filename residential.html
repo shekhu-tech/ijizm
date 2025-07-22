@@ -3,22 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agricultural Fencing - Ijizm.in</title>
+    <title>Residential Fencing - Ijizm.in</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <!-- Link to your main stylesheet -->
     <link rel="stylesheet" href="styles.css" />
     <style>
         :root {
-            --primary-color: #28a745;
-            --bg-color: #fdfaf6;
+            --primary-color: #007BFF;
+            --bg-color: #f0f4f8;
             --card-bg: #ffffff;
-            --text-color: #5d4037;
-            --heading-color: #3e2723;
-            --border-color: #d7ccc8;
+            --text-color: #4a5568;
+            --heading-color: #2d3748;
+            --shadow: 0 10px 25px rgba(0, 123, 255, 0.1);
+            --glow-shadow: 0 0 20px rgba(0, 123, 255, 0.3);
         }
         body {
-            font-family: 'Merriweather', serif;
+            font-family: 'Poppins', sans-serif;
             background-color: var(--bg-color);
             color: var(--text-color);
         }
@@ -40,7 +41,7 @@
             font-size: 1.1rem;
             max-width: 700px;
             margin: 0 auto;
-            line-height: 1.8;
+            line-height: 1.7;
         }
         .card-grid {
             display: grid;
@@ -49,37 +50,40 @@
         }
         .yt-card {
             background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 20px;
+            border-radius: 15px;
             text-decoration: none;
             color: var(--heading-color);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            box-shadow: var(--shadow);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden;
             display: flex;
             flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            aspect-ratio: 1 / 1;
         }
         .yt-card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 123, 255, 0.2), var(--glow-shadow);
         }
-        .yt-card .icon {
-            font-size: 3.5rem;
-            color: var(--primary-color);
-            margin-bottom: 15px;
+        .yt-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        .yt-card:hover img {
+            transform: scale(1.05);
+        }
+        .yt-card .card-content {
+            padding: 20px;
+            text-align: center;
         }
         .yt-card h3 {
-            font-family: 'Montserrat', sans-serif;
             font-size: 1.2rem;
-            text-align: center;
-            font-weight: 500;
+            margin: 0;
         }
         @media (max-width: 768px) {
             .description-section h1 { font-size: 2.2rem; }
             .card-grid { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+            .yt-card img { height: 150px; }
         }
     </style>
 </head>
@@ -89,31 +93,37 @@
 
     <div class="container">
         <section class="description-section">
-            <h1>Agricultural Fencing Solutions</h1>
-            <p>Protect your crops and livestock with our durable and effective agricultural electric fencing. Our systems are designed to withstand harsh weather and provide a safe barrier against wildlife and theft, ensuring your farm's productivity.</p>
+            <h1>Residential Electric Fencing</h1>
+            <p>Secure your home and family with our state-of-the-art residential electric fencing solutions. Our systems are designed to be safe, reliable, and a powerful deterrent against intruders, providing you with ultimate peace of mind.</p>
         </section>
         <main class="card-grid">
+            <!-- 40 cards will be generated here with different images. -->
             <script>
                 const youtubeLink = "https://youtube.com/@ijizm.in1?feature=shared";
                 const grid = document.querySelector('.card-grid');
+                const imageKeywords = ['modern-house', 'luxury-home', 'suburban-house', 'home-security', 'villa-exterior', 'residential-property', 'house-garden', 'family-home'];
                 for (let i = 1; i <= 40; i++) {
+                    const keyword = imageKeywords[i % imageKeywords.length];
+                    const imageUrl = `https://source.unsplash.com/400x400/?${keyword}&sig=${i}`;
                     const card = document.createElement('a');
                     card.href = youtubeLink;
                     card.target = "_blank";
                     card.className = "yt-card";
                     card.innerHTML = `
-                        <div class="icon"><i class="fas fa-tractor"></i></div>
-                        <h3>Farm Project ${i}</h3>
+                        <img src="${imageUrl}" alt="Residential Project Example ${i}">
+                        <div class="card-content">
+                            <h3>Project Example ${i}</h3>
+                        </div>
                     `;
                     grid.appendChild(card);
                 }
             </script>
         </main>
     </div>
-
+    
     <!-- Footer will be injected here -->
     <div id="footer-container"></div>
-    
+
     <!-- JavaScript to inject header and footer -->
     <script src="script.js" defer></script>
 </body>
