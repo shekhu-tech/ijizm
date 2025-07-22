@@ -71,7 +71,11 @@ function injectFooter() {
   footerContainer.innerHTML = `
     <footer id="site-footer">
       <div class="footer-container">
-        <div class="footer-logo">InshaJiZhatkamachine</div>
+        <div class="logo">
+        <a href="index.html">
+          <img src="sti.png" alt="LivFit Logo">
+        </a>
+      </div>
         <p class="footer-description">
           We Deal in multy range of electric Facing Services at right price in right cost, we understand your problem already, we deal in Residential, industrial, Commercial , and Agriculture sector. any thing you want to know about us is here please yourself and give us a chance. Thanks regards Mr. Shubham Insha</p>
         <div class="footer-buttons">
@@ -86,7 +90,7 @@ function injectFooter() {
           <a href="#"><i class="fab fa-youtube"></i></a>
         </div>
         <div class="copyright">
-          &copy; ${new Date().getFullYear()} LivFit.pro. All rights reserved.
+          &copy; ${new Date().getFullYear()} IJIZM.in. All rights reserved.
         </div>
       </div>
       <!-- Scroll to Top Button -->
