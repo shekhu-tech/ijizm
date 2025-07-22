@@ -1,1 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download Brochure - Ijizm.in</title>
+    
+    <!-- Font Awesome & Google Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+    
+    
 
+    <style>
+        :root {
+            --primary-color: #007BFF;
+            --secondary-color: #0056b3;
+            --text-color: #4a5568;
+            --heading-color: #2d3748;
+            --light-color: #f0f4f8;
+            --white-color: #ffffff;
+            --shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-color);
+            background-color: var(--light-color);
+        }
+        
+        /* --- Header --- */
+        .main-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: var(--white-color);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            z-index: 1000;
+            padding: 15px 0;
+        }
+        .main-header .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        .main-nav a {
+            color: var(--heading-color);
+            text-decoration: none;
+            margin-left: 25px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        .main-nav a:hover, .main-nav a.active {
+            color: var(--primary-color);
+        }
+
+        /* --- Download Section --- */
+        .download-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh; /* Viewport ki puri height le */
+            padding: 20px;
+        }
+
+        .download-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            max-width: 400px;
+            padding: 50px 40px;
+            background-color: var(--white-color);
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            text-decoration: none;
+            color: var(--heading-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .download-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .download-card .icon {
+            font-size: 5rem;
+            color: var(--primary-color);
+            margin-bottom: 25px;
+        }
+
+        .download-card h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .download-card p {
+            font-size: 1.1rem;
+            color: var(--text-color);
+            margin-bottom: 30px;
+        }
+
+        .download-button {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--white-color);
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+
+        .download-card:hover .download-button {
+            background-color: var(--secondary-color);
+        }
+        
+        @media (max-width: 768px) {
+            .main-nav { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <div id="header-container"></div>
+
+    <!-- Download Section -->
+    <main class="download-section">
+        <!-- 
+            IMPORTANT: 'href' me apni PDF file ka path dalein.
+            'download' attribute se file browser me khulne ke bajaye download hogi.
+        -->
+        <a href="path/to/your/brochure.pdf" class="download-card" download>
+            <div class="icon">
+                <i class="fas fa-file-pdf"></i>
+            </div>
+            <h2>Download Our Brochure</h2>
+            <p>Click here to get our complete service catalog and company details in PDF format.</p>
+            <span class="download-button">Download Now</span>
+        </a>
+    </main>
+ <!-- Footer will be injected here -->
+    <div id="footer-container"></div>
+    <!-- JavaScript to inject header and footer -->
+  <script src="script.js" defer></script>
+</body>
+</html>
